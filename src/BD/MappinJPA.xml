@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="BD.Coches">
+        <table name="Coches" schema="DatosCoches" catalog=""/>
+        <attributes>
+            <id name="matricula">
+                <column name="Matricula"/>
+            </id>
+            <basic name="marca">
+                <column name="Marca"/>
+            </basic>
+            <basic name="precio">
+                <column name="Precio"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="BD.Propietarios">
+        <table name="Propietarios" schema="DatosCoches" catalog=""/>
+        <attributes>
+            <id name="dni">
+                <column name="DNI"/>
+            </id>
+            <basic name="nombre">
+                <column name="Nombre"/>
+            </basic>
+            <basic name="edad">
+                <column name="Edad"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
