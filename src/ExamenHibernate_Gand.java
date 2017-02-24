@@ -98,7 +98,7 @@ public class ExamenHibernate_Gand {
         System.out.println("Introduce el NOMBRE del Porpietario: ");
         String nombre = teclado.nextLine();
 
-        String consulta = "FROM Coches WHERE Coches.dni IN (SELECT dni FROM Propietarios WHERE nombre = " + nombre + ")";
+        String consulta = "FROM Coches WHERE Coches.DNI IN (SELECT dni FROM Propietarios WHERE nombre = " + nombre + ")";
         Query q = session.createQuery(consulta);
 
         System.out.println("Coches del Propietario: " + nombre);
@@ -257,7 +257,7 @@ public class ExamenHibernate_Gand {
         int filas = session.createQuery(insert).executeUpdate();
 
         //Método 2 con save
-        Coches c = new Coches(matricula, marca, precio, DNI);
+        Coches c = new Coches(matricula, marca, Integer.parseInt(precio), DNI);
         session.save(c);
         tx.commit();
 

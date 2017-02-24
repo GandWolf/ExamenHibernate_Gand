@@ -1,9 +1,6 @@
 package BD;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Gand on 24/02/17.
@@ -13,6 +10,17 @@ public class Coches {
     private String matricula;
     private String marca;
     private Integer precio;
+    private String DNI;
+
+    public Coches() {
+    }
+
+    public Coches(String matricula, String marca, Integer precio, String DNI) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.precio = precio;
+        this.DNI = DNI;
+    }
 
     @Id
     @Column(name = "Matricula")
@@ -42,6 +50,15 @@ public class Coches {
 
     public void setPrecio(Integer precio) {
         this.precio = precio;
+    }
+
+    @Basic
+    @Column(name = "DNI")
+    public String getDNI(){
+        return  DNI;
+    }
+    public void setDNI(String DNI){
+        this.DNI = DNI;
     }
 
     @Override
